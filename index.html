@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COMPLIANCE – FREE TYPE C REQUEST</title>
+
+<style>
+  :root {
+    --primary: #0b3d2e;
+    --primary-light: #e9f3ef;
+    --border: #d1d5db;
+    --text: #1f2937;
+    --muted: #6b7280;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 20px 12px;
+    color: var(--text);
+  }
+
+  .container {
+    max-width: 920px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .header {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 20px 22px;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .header p {
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  form {
+    padding: 22px;
+  }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 26px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .form-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .form-group.full {
+    grid-template-columns: 1fr;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--muted);
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 15px;
+    background: #ffffff;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(11,61,46,0.1);
+  }
+
+  input[readonly] {
+    background: #f9fafb;
+  }
+
+  .actions {
+    margin-top: 30px;
+    position: sticky;
+    bottom: 0;
+    background: #ffffff;
+    padding-top: 12px;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  button:active {
+    transform: scale(0.99);
+  }
+
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    .form-group {
+      grid-template-columns: 1fr;
+    }
+
+    input, select {
+      font-size: 16px; /* prevents iOS zoom */
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <h1>COMPLIANCE – FREE TYPE C REQUEST</h1>
+    <p>Associate-requested issuance of free Type C polo shirts</p>
+  </div>
+
+  <form id="requestForm">
+
+    <div class="section-title">Employee Information</div>
+
+    <div class="form-group">
+      <div>
+        <label>Head Office</label>
+        <select id="headOffice" required>
+          <option value="">Select</option>
+          <option>HO Main - Palawan</option>
+          <option>HO Ext.- CRC</option>
+          <option>HO Ext.- Cybergate</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Section</label>
+        <select id="section" required>
+          <option value="">Select</option>
+          <option>Regulatory Compliance</option>
+          <option>Compliance Monitoring and Testing</option>
+          <option>Transaction Monitoring and Investigation</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div>
+        <label>Employee No.</label>
+        <input type="text" id="employeeNo" required>
+      </div>
+
+      <div>
+        <label>Employer</label>
+        <select id="employer" required>
+          <option value="">Select</option>
+          <option>EUPI</option>
+          <option>PPSI</option>
+          <option>PFSI</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div>
+        <label>First Name</label>
+        <input type="text" id="firstName" required>
+      </div>
+
+      <div>
+        <label>Last Name</label>
+        <input type="text" id="lastName" required>
+      </div>
+    </div>
+
+    <div class="section-title">Polo Shirt Details</div>
+
+    <div class="form-group">
+      <div>
+        <label>Polo Shirt Category</label>
+        <select id="poloCategory" required>
+          <option value="">Select</option>
+          <option>Men</option>
+          <option>Women</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Polo Shirt Size</label>
+        <select id="poloSize" required>
+          <option value="">Select</option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+          <option>2XL</option>
+          <option>3XL</option>
+          <option>4XL</option>
+          <option>5XL</option>
+          <option>6XL</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div>
+        <label>Yellow Version (PCS)</label>
+        <input type="number" id="yellowPCS" min="0">
+      </div>
+
+      <div>
+        <label>Green Version (PCS)</label>
+        <input type="number" id="greenPCS" min="0">
+      </div>
+    </div>
+
+    <div class="section-title">Additional Details</div>
+
+    <div class="form-group">
+      <div>
+        <label>Remarks</label>
+        <select id="remarks">
+          <option value="">Select</option>
+          <option>Free-Anniversary</option>
+          <option>Salded</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Date of Anniversary</label>
+        <input type="date" id="anniversaryDate">
+      </div>
+    </div>
+
+    <div class="form-group full">
+      <div>
+        <label>Status</label>
+        <input type="text" id="status" value="Pending" readonly>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Submit Request</button>
+    </div>
+
+  </form>
+</div>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbz8tVRNqYAIJ_zrgLtk9R1vVRDqulhYIGA0QjFLeBXyeOrXrVKnen0UT6q01jYSy6JU/exec";
+
+document.getElementById("requestForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = {
+    headOffice: headOffice.value,
+    section: section.value,
+    employeeNo: employeeNo.value,
+    firstName: firstName.value,
+    lastName: lastName.value,
+    poloCategory: poloCategory.value,
+    poloSize: poloSize.value,
+    employer: employer.value,
+    yellowPCS: yellowPCS.value,
+    greenPCS: greenPCS.value,
+    remarks: remarks.value,
+    anniversaryDate: anniversaryDate.value,
+    status: status.value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(() => {
+    alert("Request submitted successfully.");
+    requestForm.reset();
+  })
+  .catch(() => alert("Error submitting request."));
+});
+</script>
+
+</body>
+</html>
