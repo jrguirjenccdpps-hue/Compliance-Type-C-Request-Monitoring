@@ -124,10 +124,34 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    position: relative;
   }
 
   button:active {
     transform: scale(0.99);
+  }
+
+  /* Loading spinner */
+  button.loading {
+    pointer-events: none;
+  }
+
+  button.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -9px 0 0 -9px;
+    border: 2px solid #fff;
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
 
   /* Mobile Optimization */
@@ -285,9 +309,16 @@
 
 <script>
 const scriptURL = "https://script.google.com/macros/s/AKfycbz8tVRNqYAIJ_zrgLtk9R1vVRDqulhYIGA0QjFLeBXyeOrXrVKnen0UT6q01jYSy6JU/exec";
+const requestForm = document.getElementById("requestForm");
+const submitButton = requestForm.querySelector("button[type=submit]");
 
-document.getElementById("requestForm").addEventListener("submit", function(e) {
+requestForm.addEventListener("submit", function(e) {
   e.preventDefault();
+
+  // Show submitting effect
+  submitButton.disabled = true;
+  submitButton.classList.add("loading");
+  submitButton.textContent = "Submitting...";
 
   const data = {
     headOffice: headOffice.value,
@@ -314,7 +345,13 @@ document.getElementById("requestForm").addEventListener("submit", function(e) {
     alert("Request submitted successfully.");
     requestForm.reset();
   })
-  .catch(() => alert("Error submitting request."));
+  .catch(() => alert("Error submitting request."))
+  .finally(() => {
+    // Revert button state
+    submitButton.disabled = false;
+    submitButton.classList.remove("loading");
+    submitButton.textContent = "Submit Request";
+  });
 });
 </script>
 
